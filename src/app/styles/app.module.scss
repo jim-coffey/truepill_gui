@@ -1,0 +1,19 @@
+@import '../../scss/utils';
+@import '../../scss/vars';
+
+.icon {
+  vertical-align: middle;
+}
+
+.button {
+  @include font-size(16);
+
+  background-color: $BRAND_COLOR;
+  color: $BRAND_INVERTED;
+  padding: 3px 5px;
+  margin-left: 16px;
+}
+
+.header {
+  margin-bottom: 10px;
+}
