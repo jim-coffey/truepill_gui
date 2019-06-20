@@ -12,6 +12,11 @@
   color: $BRAND_INVERTED;
   padding: 3px 5px;
   margin-left: 16px;
+  border: 1px solid $BRAND_INVERTED;
+
+  &:hover {
+    background-color: $BRAND_HINT;
+  }
 }
 
 .header {
