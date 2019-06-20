@@ -1,3 +1,4 @@
+@import '../../../scss/utils';
 @import '../../../scss/vars';
 
 .products {
@@ -29,5 +30,19 @@
 
   &.count {
     text-align: right;
+  }
+}
+
+.button {
+  @include font-size(16);
+
+  background-color: $BRAND_COLOR;
+  color: $BRAND_INVERTED;
+  padding: 3px 5px;
+  margin: 1rem 0;
+  border: 1px solid $BRAND_INVERTED;
+
+  &:hover {
+    background-color: $BRAND_HINT;
   }
 }

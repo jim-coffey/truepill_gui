@@ -1,9 +1,12 @@
 import { all, ForkEffect, takeLatest } from 'redux-saga/effects';
-import QuoteAction from './products/ProductAction';
-import QuoteSaga from './products/ProductSaga';
+import ProductAction from './products/ProductAction';
+import ProductSaga from './products/ProductSaga';
 
 export default function* rootSaga() {
-  const filteredSagas: ForkEffect[] = [takeLatest(QuoteAction.GET_PRODUCTS, QuoteSaga.getQuote)];
+  const filteredSagas: ForkEffect[] = [
+    takeLatest(ProductAction.GET_PRODUCTS, ProductSaga.getProducts),
+    takeLatest(ProductAction.SET_MANUAL_COUNT, ProductSaga.setManualCount)
+  ];
 
   yield all(filteredSagas);
 }

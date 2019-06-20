@@ -3,18 +3,20 @@ import IAction from '../IAction';
 import IProductReducerState from './models/IProductReducerState';
 import IProduct from './models/IProduct';
 
-export default class QuoteReducer {
+export default class ProductReducer {
   private static readonly _initialState: IProductReducerState = {
+    product_manual_count: 0,
+    product_name: '',
     products: []
   };
 
   public static reducer(
-    state: IProductReducerState = QuoteReducer._initialState,
+    state: IProductReducerState = ProductReducer._initialState,
     action: IAction<any>
   ): IProductReducerState {
     switch (action.type) {
       case ProductAction.ADD:
-        return QuoteReducer._addProducts(state, action);
+        return ProductReducer._addProducts(state, action);
       default:
         return state;
     }
