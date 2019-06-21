@@ -97,7 +97,7 @@ class ProductList extends React.Component<IStateToProps & IDispatchToProps & IPr
         </table>
         {product_name ? (
           <button className={styles.button} type="button" onClick={this.onResetButtonHandler}>
-            Reset Manual Count
+            Reset Stock Level
           </button>
         ) : null}
       </section>

@@ -10,6 +10,6 @@ export default class ProductService {
   }
 
   public static async bulkUpdate(productUpdate: IProductUpdate): Promise<any> {
-    return Axios.put(`${INVENTORY_API_URL}/api/products`, { productUpdates: [productUpdate], forceReset: true });
+    return Axios.patch(`${INVENTORY_API_URL}/api/products`, { productUpdates: [productUpdate], forceReset: true });
   }
 }
