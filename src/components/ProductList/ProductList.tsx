@@ -95,9 +95,11 @@ class ProductList extends React.Component<IStateToProps & IDispatchToProps & IPr
             ))}
           </tbody>
         </table>
-        <button className={styles.button} type="button" onClick={this.onResetButtonHandler}>
-          Reset Manual Count
-        </button>
+        {product_name ? (
+          <button className={styles.button} type="button" onClick={this.onResetButtonHandler}>
+            Reset Manual Count
+          </button>
+        ) : null}
       </section>
     );
   }

@@ -10,7 +10,8 @@
     "react-redux": "5.0.7",
     "react-scripts-ts": "3.1.0",
     "redux": "4.0.0",
-    "redux-saga": "0.16.0"
+    "redux-saga": "0.16.0",
+    "socket.io-client": "^2.2.0"
   },
   "scripts": {
     "clean": "rimraf 'build/**/*'",
@@ -36,7 +37,7 @@
     "redux-devtools-extension": "2.13.5",
     "rimraf": "2.6.2",
     "sass-loader": "7.1.0",
-    "stylelint": "9.6.0",
+    "stylelint": "^10.1.0",
     "stylelint-config-standard": "18.2.0",
     "stylelint-order": "1.0.0",
     "typescript": "3.0.3"
