@@ -27,7 +27,7 @@ const mapDispatchToProps = (dispatch: Dispatch<IAction<any>>): IDispatchToProps 
   dispatch
 });
 
-class ProductList extends React.Component<IStateToProps & IDispatchToProps & IProps, IState> {
+export class ProductList extends React.Component<IStateToProps & IDispatchToProps & IProps, IState> {
   public state = {
     product_name: '',
     product_qty: 0
@@ -81,14 +81,24 @@ class ProductList extends React.Component<IStateToProps & IDispatchToProps & IPr
           </thead>
           <tbody>
             {products.map(product => (
-              <tr key={product.product_name}>
+              <tr data-automation-id="product-row" key={product.product_name}>
                 <td>{product.product_name}</td>
                 <td className={styles.count}>{product.product_current_count}</td>
                 <td className={styles.count}>
                   {product_name === product.product_name ? (
-                    <input type="number" value={product_qty} onChange={this.handleManucalCountChange(product)} />
+                    <input
+                      data-automation-id={`input-${product.product_name}`}
+                      type="number"
+                      value={product_qty}
+                      onChange={this.handleManucalCountChange(product)}
+                    />
                   ) : (
-                    <span onClick={this.handleProductClick(product)}>{product.product_manual_count}</span>
+                    <span
+                      data-automation-id={`text-${product.product_name}`}
+                      onClick={this.handleProductClick(product)}
+                    >
+                      {product.product_manual_count}
+                    </span>
                   )}
                 </td>
               </tr>
@@ -96,7 +106,12 @@ class ProductList extends React.Component<IStateToProps & IDispatchToProps & IPr
           </tbody>
         </table>
         {product_name ? (
-          <button className={styles.button} type="button" onClick={this.onResetButtonHandler}>
+          <button
+            data-automation-id="reset-button"
+            className={styles.button}
+            type="button"
+            onClick={this.onResetButtonHandler}
+          >
             Reset Stock Level
           </button>
         ) : null}

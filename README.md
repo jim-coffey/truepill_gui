@@ -32,6 +32,8 @@ Production deployment strategy not implemented as it depends upon if using Docke
 
 ## Test
 
-`yarn test`
+Not written via TDD. Component test written after the fact. No unit tests across the saga code as I believe it's just a repeat of the code itself and the test needs to be rewritten after any code change making them so brittle. Jest integration testing is my preference but so much work not done here.
 
-## NOTES
+My preference for end to end testing is Cypress, falling back to Nightwatch if you need to drive cross browser testing - not implemented here.
+
+`yarn test`
