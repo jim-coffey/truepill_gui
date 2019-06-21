@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 import { applyMiddleware, createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import createSagaMiddleware from 'redux-saga';
+import io from 'socket.io-client';
+
 import App from './app';
 import Reducer from './stores/rootReducer';
 import rootSaga from './stores/rootSaga';
@@ -17,6 +19,9 @@ const store = createStore(Reducer, composeWithDevTools(applyMiddleware(sagaMiddl
 sagaMiddleware.run(rootSaga);
 
 store.dispatch(ProductAction.getProducts());
+
+const socket = io(process.env.REACT_APP_INVENTORY_API_URL);
+socket.on('products', () => store.dispatch(ProductAction.getProducts()));
 
 ReactDOM.render(
   <Provider store={store}>

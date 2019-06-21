@@ -19,9 +19,7 @@ export default class ProductSaga {
 
   public static *setManualCount(action: IAction<IProductUpdate>) {
     try {
-      const { affectedRows } = yield call(ProductService.bulkUpdate, action.payload);
-      console.log(affectedRows);
-      yield put(ProductAction.getProducts());
+      yield call(ProductService.bulkUpdate, action.payload);
     } catch (error) {
       yield put(ProductAction.addProducts([]));
     }
