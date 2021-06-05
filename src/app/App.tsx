@@ -18,6 +18,7 @@ const mapStateToProps = (): IStateToProps => ({});
 const mapDispatchToProps = (dispatch: Dispatch<IAction<any>>): IDispatchToProps => ({
   dispatch
 });
+const myVar3 = 3;
 const myVar = 1;
 const myVar2 = 2;
 
