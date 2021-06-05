@@ -13,12 +13,13 @@ interface IStateToProps {}
 interface IDispatchToProps {
   dispatch: (action: IAction<any>) => void;
 }
-
+const var1 = 1;
 const mapStateToProps = (): IStateToProps => ({});
 const mapDispatchToProps = (dispatch: Dispatch<IAction<any>>): IDispatchToProps => ({
   dispatch
 });
-
+const var3 = 3;
+const var4 = 4;
 class App extends React.Component<IStateToProps & IDispatchToProps & IProps, IState> {
   public onClickButtonHandler = this._onClickButton.bind(this);
 
