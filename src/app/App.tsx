@@ -13,7 +13,7 @@ interface IStateToProps {}
 interface IDispatchToProps {
   dispatch: (action: IAction<any>) => void;
 }
-
+const t = 'farquar';
 const mapStateToProps = (): IStateToProps => ({});
 const mapDispatchToProps = (dispatch: Dispatch<IAction<any>>): IDispatchToProps => ({
   dispatch
