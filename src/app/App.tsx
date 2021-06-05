@@ -18,6 +18,7 @@ const mapStateToProps = (): IStateToProps => ({});
 const mapDispatchToProps = (dispatch: Dispatch<IAction<any>>): IDispatchToProps => ({
   dispatch
 });
+const myVar = 1;
 
 class App extends React.Component<IStateToProps & IDispatchToProps & IProps, IState> {
   public onClickButtonHandler = this._onClickButton.bind(this);
